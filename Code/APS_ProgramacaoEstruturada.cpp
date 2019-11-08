@@ -349,7 +349,7 @@ main()
             case 3:
             exibir();break;
             case 4:
-            saveloadf();
+            saveloadf();break;
             case 0:break;
             default:
             opc();
