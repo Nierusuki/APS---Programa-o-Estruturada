@@ -10,6 +10,7 @@ char nome[50][30], sexo[50];
 float notas[50][4];
 void load(void);
 FILE *arq;
+void opc(void);
 void sxo(void)
 {
     char aux;
@@ -74,13 +75,13 @@ void media(void)
 }
 void adicionar(void)
 {
-    printf("UNICARIOCA - BANCO DE DADOS\nADICIONAR USUÁRIO\nMatrícula: ");
+    printf("UNICARIOCA - BANCO DE DADOS\nADICIONAR USUï¿½RIO\nMatrï¿½cula: ");
     scanf("%d",&buffer);
     for (int p=0;p<i;p++)
     {
         if (buffer == matr[p])
         {
-            printf("Matrícula já registrada. \n");
+            printf("Matrï¿½cula jï¿½ registrada. \n");
             Sleep(2500);
             system("cls");
             return;
@@ -88,7 +89,7 @@ void adicionar(void)
     }
     if (i >= 50)
     {
-        printf("UNICARIOCA - BANCO DE DADOS\nADICIONAR USUÁRIO");
+        printf("UNICARIOCA - BANCO DE DADOS\nADICIONAR USUï¿½RIO");
         printf("\n\nBanco de dados cheio, salve o arquivo e limpe para continuar.\n");
         Sleep(2500);
         system("cls");
@@ -116,20 +117,20 @@ void pesquisar(void)
         load();
     }
 
-    printf("Digite a matrícula para pesquisar o aluno: ");
+    printf("Digite a matrï¿½cula para pesquisar o aluno: ");
     scanf("%d",&finder);
     for (int j=0;j<=i;j++)
     {
         if (finder == matr[j])
         {
-            printf("Aluno de matrícula %d encontrado, dados a seguir:\nNome: %s\nSexo: %c\nIdade: %d\nMedia das avaliacoes: %.1f", matr[j],nome[j], sexo[j],idade[j], notas[j][3]);
+            printf("Aluno de matrï¿½cula %d encontrado, dados a seguir:\nNome: %s\nSexo: %c\nIdade: %d\nMedia das avaliacoes: %.1f", matr[j],nome[j], sexo[j],idade[j], notas[j][3]);
             printf("\n\nPressione qualquer tecla para voltar ao menu.");
             getch();
             system("cls");
             return;
         }
     }
-    printf("Matrícula não encontrada.\n");
+    printf("Matrï¿½cula nï¿½o encontrada.\n");
     Sleep(1000);
     system("cls");
 }
@@ -138,17 +139,17 @@ void exibir(void)
     int flag;
     if (i==0)
     {
-        printf("Sem usuários cadastrados, carregando arquivo.");
+        printf("Sem usuï¿½rios cadastrados, carregando arquivo.");
         Sleep(1500);
         system("cls");
         load();
     }
-    printf("UNICARIOCA - BANCO DE DADOS\nEXIBIR USUÁRIOS\n[1] Aprovados\n[2] Reprovados\n[3] Todos\n[0] Voltar\nSua opçao: ");
+    printf("UNICARIOCA - BANCO DE DADOS\nEXIBIR USUï¿½RIOS\n[1] Aprovados\n[2] Reprovados\n[3] Todos\n[0] Voltar\nSua opï¿½ao: ");
     scanf("%d",&flag);
     if (flag == 1)
     {
         system("cls");
-        printf("[1]Alunos aprovados com media >=7\n[2]Alunos aprovados com media >=9\n[0] Voltar\nSua opçao: ");
+        printf("[1]Alunos aprovados com media >=7\n[2]Alunos aprovados com media >=9\n[0] Voltar\nSua opï¿½ao: ");
         scanf("%d",&flag);
         if (flag == 1)
         {
@@ -181,7 +182,7 @@ void exibir(void)
     else if (flag == 2)
     {
         system("cls");
-        printf("[1]Alunos reprovados com media <7\n[2]Alunos reprovados com media <5\n[0] Voltar\nSua opçao: ");
+        printf("[1]Alunos reprovados com media <7\n[2]Alunos reprovados com media <5\n[0] Voltar\nSua opï¿½ao: ");
         scanf("%d",&flag);
         if (flag == 1)
         {
@@ -233,7 +234,7 @@ void save(void)
     arq = fopen(nomearq,"w");
     if (arq == NULL)
         {
-            printf("Não posso abrir o arquivo teste. \n");
+            printf("Nï¿½o posso abrir o arquivo teste. \n");
             Sleep(1500);
         }
     else
@@ -257,7 +258,7 @@ void load(void)
     arq = fopen(nomearq,"r");
     if (arq == NULL)
     {
-        printf("Não foi possível ler o arquivo.");
+        printf("Nï¿½o foi possï¿½vel ler o arquivo.");
         Sleep(1500);
         system("cls");
         return;
@@ -301,7 +302,7 @@ void saveloadf(void)
 
         load();
     }
-    printf("UNICARIOCA - BANCO DE DADOS\n[1] Salvar\n[2] Carregar\n[0] Voltar\nSua opção: ");
+    printf("UNICARIOCA - BANCO DE DADOS\n[1] Salvar\n[2] Carregar\n[0] Voltar\nSua opï¿½ï¿½o: ");
     scanf("%d",&flag);
     if (flag == 1)
     {
@@ -323,31 +324,28 @@ main()
     int flag=1;
     while (flag != 0)
     {
-        printf("UNICARIOCA - BANCO DE DADOS\n[1] Adicionar\n[2] Pesquisar\n[3] Exibir\n[4] Salvar/Carregar\n[0] Sair\nSua opção: ");
+        printf("UNICARIOCA - BANCO DE DADOS\n[1] Adicionar\n[2] Pesquisar\n[3] Exibir\n[4] Salvar/Carregar\n[0] Sair\nSua opï¿½ï¿½o: ");
         scanf("%d",&flag);
-        if (flag == 1)
+        switch (flag)
         {
-            system("cls");
-            adicionar();
-        }
-        else if (flag == 2)
-        {
-            system("cls");
-            pesquisar();
-        }
-        else if (flag == 3)
-        {
-            system("cls");
-            exibir();
-        }
-        else if (flag == 4)
-        {
-            system("cls");
+            case 1:
+            adicionar();break;
+            case 2:
+            pesquisar();break;
+            case 3:
+            exibir();break;
+            case 4:
             saveloadf();
-        }
-        else if (flag == 0)
-        {
-            exit(0);
+            case 0:break;
+            default:
+            opc();
         }
     }
+}
+void opc(void)
+{
+    printf("OpÃ§Ã£o incorreta");
+    Sleep(1000);
+    system("cls");
+    return;
 }
