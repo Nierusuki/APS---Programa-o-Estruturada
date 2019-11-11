@@ -74,6 +74,7 @@ void media(void)
 }
 void adicionar(void)
 {
+    system("cls");
     printf("UNICARIOCA - BANCO DE DADOS\nADICIONAR USUARIO\nMatricula: ");
     scanf("%d",&buffer);
     for (int p=0;p<i;p++)
@@ -106,6 +107,7 @@ void adicionar(void)
 }
 void pesquisar(void)
 {
+    system("cls");
     int finder;
     if (i == 0)
     {
@@ -135,6 +137,7 @@ void pesquisar(void)
 }
 void exibir(void)
 {
+    system("cls");
     int flag;
     if (i==0)
     {
@@ -240,6 +243,7 @@ void exibir(void)
 }
 void save(void)
 {
+    system("cls");
     char nomearq[20];
     printf("Digite o nome do arquivo: ");
     scanf(" %s",nomearq);
@@ -264,6 +268,7 @@ void save(void)
 }
 void load(void)
 {
+    system("cls");
     char nomearq[20];
     printf("Digite o nome do arquivo para carregar: ");
     scanf(" %s", nomearq);
@@ -308,6 +313,7 @@ void load(void)
 }
 void saveloadf(void)
 {
+    system("cls");
     int flag;
     if (i == 0)
     {
