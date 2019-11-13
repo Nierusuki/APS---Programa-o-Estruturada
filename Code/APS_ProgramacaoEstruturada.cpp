@@ -333,8 +333,13 @@ void saveloadf(void)
     }
     else if (flag == 0)
     {
+
         system("cls");
         return;
+    }
+    else 
+    {
+        opc();
     }
 }
 main()
